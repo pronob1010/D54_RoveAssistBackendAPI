@@ -15,6 +15,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    company_name = models.CharField(max_length=156, null=True, blank=True)
+
     objects = UserProfileManager()
 
     USERNAME_FIELD = "email"
