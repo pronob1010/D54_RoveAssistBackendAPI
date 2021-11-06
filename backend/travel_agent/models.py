@@ -37,3 +37,40 @@ def create_company_profile(sender, instance, created, **kwargs):
     if CompanyInfo.objects.filter(company_owner = instance).exists() == False:
         if created == True:
             CompanyInfo.objects.create(company_owner = instance)
+
+division_list = (
+("Chattogram", "Chattogram" ), 
+("Rajshahi", "Rajshahi") , 
+("Khulna" , "Khulna" ) , 
+("Barishal" , "Barishal"), 
+("Sylhet" , "Sylhet" ), 
+("Dhaka", "Dhaka" ), 
+("Rangpur", "Rangpur") , 
+("Mymensingh", "Mymensingh"),
+)
+class hotel(models.Model):
+    host = models.ForeignKey(agent, on_delete=CASCADE)
+    title = models.CharField(max_length=100)
+    cover_image= models.ImageField(upload_to='company/post_image', null=True, blank=True)
+    location =  models.CharField(max_length=15, choices=division_list, null=True)
+
+    def __str__(self):
+        return self.title
+
+choice_list = (
+    ('single', "Single"),
+    ('double', "Double")
+    )
+class room(models.Model):
+    hotel = models.ForeignKey(hotel, on_delete=CASCADE)
+    title = models.CharField(max_length=30)
+    image = models.ImageField(upload_to='hotel/room', null=True, blank=True)
+    type =  models.CharField(max_length=15, choices=choice_list, null=True)
+    facilities = models.TextField(null=True, blank=True)
+    quantity = models.PositiveIntegerField(default=0)
+    price = models.FloatField()
+
+    booked_by = models.ManyToManyField(User)
+
+    def __str__(self):
+        return self.title

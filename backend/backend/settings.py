@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'accounts',
     'note',
     'travel_agent',
+    'features',
 ]
 
 MIDDLEWARE = [
