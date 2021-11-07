@@ -24,8 +24,12 @@ class User(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = "email"
 
     def __str__(self):
-        if self.company_name != '' and self.is_agent == False:
-            return (self.username) + "- [wanna be an Agent]"
+        if self.company_name and not self.is_agent:
+            if self.username:
+                return (self.username) + "- [wanna be an Agent]"
+            else:
+                return (self.email) + "- [wanna be an Agent]"
+            
         else:
             if self.username:
                 return self.username

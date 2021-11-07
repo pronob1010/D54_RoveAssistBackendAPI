@@ -59,8 +59,8 @@ division_list = (
 ("Rangpur", "Rangpur") , 
 ("Mymensingh", "Mymensingh"),
 )
-class companyHotel(models.Model):
-    host_company = models.ForeignKey(CompanyInfo, on_delete=CASCADE, related_name="root_host")
+class Hotel(models.Model):
+    company = models.ForeignKey(CompanyInfo, on_delete=CASCADE, related_name="root_host")
     title = models.CharField(max_length=100)
     cover_image= models.ImageField(upload_to='company/post_image', null=True, blank=True)
     location =  models.CharField(max_length=15, choices=division_list, null=True)
@@ -74,7 +74,7 @@ choice_list = (
     )
 
 class room(models.Model):
-    rel_hotel = models.ForeignKey(companyHotel, on_delete=CASCADE, related_name="root_hotels")
+    hotel = models.ForeignKey(Hotel, on_delete=CASCADE, related_name="root_hotels")
     title = models.CharField(max_length=30, null=True, blank= True)
     image = models.ImageField(upload_to='hotel/room', null=True, blank=True)
     type =  models.CharField(max_length=15, choices=choice_list, null=True)
@@ -85,4 +85,4 @@ class room(models.Model):
     booked_by = models.ManyToManyField(User, null=True, blank=True)
 
     def __str__(self):
-        return self.title
+        return self.title+" - "+ self.hotel.title

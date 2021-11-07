@@ -16,8 +16,8 @@ class CompanyInfoViewSet(ModelViewSet):
 
 class hotelViewSet(ModelViewSet):
     serializer_class = hotelSerializer
-    queryset = companyHotel.objects.all()
+    queryset = Hotel.objects.all()
 
 class roomViewSet(ModelViewSet):
-    serializer_class = roomSerializer
+    serializer_class = RoomSerializer
     queryset = room.objects.all()

@@ -16,7 +16,7 @@ class postExtra(models.Model):
     def __str__(self):
         return self.title
 
-    
+
 
 from accounts. models import *
 class addPlace(postExtra):

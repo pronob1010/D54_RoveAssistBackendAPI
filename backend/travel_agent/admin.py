@@ -4,5 +4,5 @@ from django.contrib import admin
 from . models import * 
 admin.site.register(agent)
 admin.site.register(CompanyInfo)
-admin.site.register(companyHotel)
+admin.site.register(Hotel)
 admin.site.register(room)
