@@ -1,3 +1,15 @@
 from django.shortcuts import render
+from rest_framework import serializers
+from rest_framework.viewsets import ModelViewSet
 
-# Create your views here.
+from . models import *
+from . serializers import *
+from rest_framework.response import Response
+
+class addPlaceViewSet(ModelViewSet):
+    serializer_class = addPlaceSerializer
+    queryset = addPlace.objects.all()
+
+class packageTourViewSet(ModelViewSet):
+    serializer_class = packageTourSerializer
+    queryset = packageTour.objects.all()

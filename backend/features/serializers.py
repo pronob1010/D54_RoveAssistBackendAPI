@@ -1,10 +1,15 @@
-# from django.db.models import fields
-# from rest_framework.serializers import ModelSerializer
+from django.db.models import fields
+from rest_framework.serializers import ModelSerializer
 
-# from.models import *
+from.models import *
 
-# class noteSerializer(ModelSerializer):
-#     class Meta:
-#         model = note
-#         fields = '__all__'
+class addPlaceSerializer(ModelSerializer):
+    class Meta:
+        model = addPlace
+        fields = '__all__'
+
+class packageTourSerializer(ModelSerializer):
+    class Meta:
+        model = packageTour
+        fields = '__all__'
 
