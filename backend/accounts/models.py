@@ -10,6 +10,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     lastname = models.CharField(max_length=30, null=True, blank=True)
     phone = models.CharField(max_length=14, null=True, blank=True)
     address = models.CharField(max_length=128, null=True, blank=True)
+    profile_image = models.ImageField(upload_to='user/dp', null=True, blank=True)
+    
     is_active = models.BooleanField(default=True)
     is_agent = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
