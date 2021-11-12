@@ -6,7 +6,7 @@ from accounts. models import User
 class note(models.Model):
     user = models.ForeignKey(User, on_delete=CASCADE)
     title = models.CharField(max_length=150, null=True, blank=True)
-    description = models.TextField(max_length=1200, null=True, blank=True)
+    description = models.TextField(max_length=12000, null=True, blank=True)
     
     updated_on = models.DateTimeField(auto_now=True)
     created_on = models.DateTimeField(auto_now_add=True)
