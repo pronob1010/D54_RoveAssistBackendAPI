@@ -10,5 +10,5 @@ router.register("restaurant", addRestaurantViewSet, basename="restaurant"),
 router.register("packagetour", packageTourViewSet, basename="packagetour"),
 
 urlpatterns = [
-    
+
 ] + router.urls

@@ -28,5 +28,5 @@ class addRestaurant(postExtra):
 from travel_agent. models import *
 class packageTour(postExtra):
     host = models.ForeignKey(agent, on_delete=CASCADE)
-    entry = models.ManyToManyField(User, default=None)
+    entry = models.ManyToManyField(User, default=None, null=True, blank=True)
 
