@@ -6,6 +6,7 @@ from. views import *
 
 router = DefaultRouter()
 router.register("place", addPlaceViewSet, basename="place"),
+router.register("restaurant", addRestaurantViewSet, basename="restaurant"),
 router.register("packagetour", packageTourViewSet, basename="packagetour"),
 
 urlpatterns = [

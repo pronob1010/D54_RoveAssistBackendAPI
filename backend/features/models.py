@@ -22,8 +22,11 @@ from accounts. models import *
 class addPlace(postExtra):
     user = models.ForeignKey(User, on_delete= CASCADE)
 
+class addRestaurant(postExtra):
+    user = models.ForeignKey(User, on_delete= CASCADE)
+
 from travel_agent. models import *
 class packageTour(postExtra):
     host = models.ForeignKey(agent, on_delete=CASCADE)
-    entry = models.ManyToManyField(User)
+    entry = models.ManyToManyField(User, default=None)
 

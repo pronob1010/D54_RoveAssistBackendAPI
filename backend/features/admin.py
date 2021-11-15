@@ -6,3 +6,4 @@ from django.contrib import admin
 from .models import *
 admin.site.register(addPlace)
 admin.site.register(packageTour)
+admin.site.register(addRestaurant)

@@ -10,6 +10,10 @@ class addPlaceViewSet(ModelViewSet):
     serializer_class = addPlaceSerializer
     queryset = addPlace.objects.all()
 
+class addRestaurantViewSet(ModelViewSet):
+    serializer_class = addRestaurantSerializer
+    queryset = addRestaurant.objects.all()
+
 class packageTourViewSet(ModelViewSet):
     serializer_class = packageTourSerializer
     queryset = packageTour.objects.all()

@@ -13,3 +13,8 @@ class packageTourSerializer(ModelSerializer):
         model = packageTour
         fields = '__all__'
 
+class addRestaurantSerializer(ModelSerializer):
+    class Meta:
+        model = addRestaurant
+        fields = '__all__'
+
