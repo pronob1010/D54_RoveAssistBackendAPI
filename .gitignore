@@ -46,3 +46,9 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+backend/accounts/__pycache__/
+
+backend/accounts/migrations/__pycache__/
+
+backend/travel_agent/migrations/__pycache__/
