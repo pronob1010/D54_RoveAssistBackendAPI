@@ -146,5 +146,5 @@ JAZZMIN_SETTINGS = {
     "site_title": "RoveAssist Admin",
     "site_header": "RoveAssist Admin",
     "site_brand": "RoveAssist",
-    "site_logo": "company/logo/forweb_AwqYdY0.png",
+    # "site_logo": "company/logo/forweb_AwqYdY0.png",
 }
